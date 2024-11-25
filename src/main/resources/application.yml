@@ -1,0 +1,6 @@
+server:
+  port: 7000
+
+spring:
+  liquibase:
+    change-log: db/changelog/master.yml

@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/postgres
+    username: database
+    password: database
+
+cryptography:
+  encryption:
+    key: ${ENCRYPTION_KEY}
+    algorithm: AES-GCM
+  pseudonymize:
+    active: true
+  gdpr-encryption:
+    active: true

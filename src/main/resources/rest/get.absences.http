@@ -1,0 +1,4 @@
+GET http://localhost:7000/absences
+
+###
+GET http://localhost:7000/absences?employee-id=eb2c6e3f-d830-4bcc-bb60-10099ca86422

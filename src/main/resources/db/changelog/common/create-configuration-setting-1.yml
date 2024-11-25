@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-configuration-setting-1
+      author: cenglisch
+      changes:
+        - createTable:
+            tableName: configuration_setting
+            columns:
+              - column:
+                  name: id
+                  type: varchar(255)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: value
+                  type: varchar(255)

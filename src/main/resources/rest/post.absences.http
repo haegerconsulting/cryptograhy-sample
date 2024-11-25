@@ -1,0 +1,18 @@
+### Create Absence
+POST http://localhost:7000/absences
+Content-Type: application/json
+
+{
+  "employeeId": "47c448c6-973e-4200-9aca-109ba9e830a2",
+  "typeOfAbsence": "VACATION"
+}
+
+### Create Absence with reason
+POST http://localhost:7000/absences
+Content-Type: application/json
+
+{
+  "employeeId": "c5e99a83-ba02-47ad-ac0d-7f635cdfc795",
+  "typeOfAbsence": "ILLNESS",
+  "reason": "Magen Darm"
+}
