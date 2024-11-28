@@ -4,3 +4,5 @@ server:
 spring:
   liquibase:
     change-log: db/changelog/master.yml
+  flyway:
+    sql-migration-prefix

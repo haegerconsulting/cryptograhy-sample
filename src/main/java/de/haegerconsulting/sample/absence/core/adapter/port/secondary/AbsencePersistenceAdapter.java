@@ -14,33 +14,33 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class AbsencePersistenceAdapter implements AbsenceRepository {
 
-  private final AbsenceJpaRepository absenceJpaRepository;
-  private final AbsenceMapper absenceMapper;
+  private final AbsenceJpaRepository repository;
+  private final AbsenceMapper mapper;
 
   @Override
   public Collection<Absence> findByEmployeeId(EmployeeId employeeId) {
-    return absenceJpaRepository.findByEmployeeId(employeeId.id())
+    return repository.findByEmployeeId(employeeId.id())
       .stream()
-      .map(absenceMapper::to)
+      .map(mapper::to)
       .collect(Collectors.toList());
   }
 
   @Override
   public Collection<Absence> findAll() {
-    return absenceJpaRepository.findAll()
+    return repository.findAll()
       .stream()
-      .map(absenceMapper::to)
+      .map(mapper::to)
       .collect(Collectors.toList());
   }
 
   @Override
   @Transactional
   public void deleteByEmployeeId(EmployeeId employeeId) {
-    absenceJpaRepository.deleteByEmployeeId(employeeId.id());
+    repository.deleteByEmployeeId(employeeId.id());
   }
 
   @Override
   public void save(Absence absence) {
-    absenceJpaRepository.save(absenceMapper.to(absence));
+    repository.save(mapper.to(absence));
   }
 }

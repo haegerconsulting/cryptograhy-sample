@@ -12,3 +12,8 @@ cryptography:
     active: true
   gdpr-encryption:
     active: true
+  logging-enabled: true
+
+logging:
+  level:
+    de.haegerconsulting: debug

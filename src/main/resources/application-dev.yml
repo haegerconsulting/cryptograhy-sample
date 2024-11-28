@@ -1,8 +1,9 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5433/postgres
-    username: database
-    password: database
+    username: postgres
+    password: postgres
+
 
 cryptography:
   encryption:
@@ -12,3 +13,4 @@ cryptography:
     active: true
   gdpr-encryption:
     active: true
+  logging-enabled: true

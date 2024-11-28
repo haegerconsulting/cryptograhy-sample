@@ -5,12 +5,12 @@ import de.haegerconsulting.sample.employees.api.domain.EmployeeId;
 import de.haegerconsulting.sample.employees.core.domain.Employee;
 import de.haegerconsulting.sample.employees.core.domain.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
+@Component
 @RequiredArgsConstructor
 public class EmployeePersistenceAdapter implements EmployeeRepository {
 
@@ -24,7 +24,7 @@ public class EmployeePersistenceAdapter implements EmployeeRepository {
 
   @Override
   public Collection<Employee> findAll() {
-    return repository.findAll().stream().map(mapper::to).collect(Collectors.toCollection(ArrayList::new));
+    return repository.findAll().stream().map(mapper::to).toList();
   }
 
   @Override

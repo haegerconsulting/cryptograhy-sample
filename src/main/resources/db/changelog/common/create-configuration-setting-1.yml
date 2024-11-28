@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: create-configuration-setting-1
+      id: create-cryptography_settings-1
       author: cenglisch
       changes:
         - createTable:
-            tableName: configuration_setting
+            tableName: cryptography_settings
             columns:
               - column:
                   name: id

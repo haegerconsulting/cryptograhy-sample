@@ -1,6 +1,7 @@
 package de.haegerconsulting.sample.absence.core.adapter.port.primary.event;
 
 import de.haegerconsulting.sample.absence.core.application.AbsencePrimaryPort;
+import de.haegerconsulting.sample.employees.api.domain.EmployeeLeftCompany;
 import de.haegerconsulting.sample.employees.core.application.EmployeeLeavesCompany;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.event.EventListener;
@@ -12,8 +13,8 @@ public class AbsenceEventListener {
 
   private final AbsencePrimaryPort absencePrimaryPort;
 
-  @EventListener(EmployeeLeavesCompany.class)
-  public void onEvent(EmployeeLeavesCompany employeeLeavesCompany) {
-    absencePrimaryPort.deleteAllAbsencesForEmployee(employeeLeavesCompany.employeeId());
+  @EventListener(EmployeeLeftCompany.class)
+  public void onEvent(EmployeeLeftCompany employeeLeftCompany) {
+    absencePrimaryPort.deleteAllAbsencesForEmployee(employeeLeftCompany.employeeId());
   }
 }
